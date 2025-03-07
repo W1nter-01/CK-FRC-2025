@@ -23,12 +23,12 @@ public class Drivetrain extends SubsystemBase{
         rightMotor3 = new SparkMax(3, MotorType.kBrushed);
         rightMotor4 = new SparkMax(4, MotorType.kBrushed);
     }
-    
-    
-    
+
+
+
 
     public void setMotor(double left, double right, double rightE, boolean pressJoyL, boolean pressJoyR){
-        
+
         if(driveMode == "Evan"){
             if (pressJoyL){
                 speed = 1;
@@ -39,7 +39,7 @@ public class Drivetrain extends SubsystemBase{
             leftMotor2.set((left - rightE)*speed);
             rightMotor3.set((-left - rightE)*speed);
             rightMotor4.set((-left - rightE)*speed);
-            
+
         }else{
             if (pressJoyL || pressJoyR){
                 speed = 1;
@@ -53,7 +53,7 @@ public class Drivetrain extends SubsystemBase{
             //*Math.abs(left)
             //*Math.abs(right)
         }
-        
+
     }
 
     public static Drivetrain getInstance() {
