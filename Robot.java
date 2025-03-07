@@ -25,7 +25,7 @@ public class Robot extends TimedRobot {
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
   public OperatorInterface operatorInterface;
   public Drivetrain drivetrain;
-
+  public Elevator elevator;
 
 
   /**
@@ -43,6 +43,7 @@ public class Robot extends TimedRobot {
   public void robotInit(){
     operatorInterface = OperatorInterface.getInstance();
     drivetrain = Drivetrain.getInstance();
+    elevator = Elevator.getInstance();
   }
 
   /**
@@ -70,7 +71,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autoSelected = m_chooser.getSelected();
-    // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
+    m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);
   }
 
@@ -81,7 +82,6 @@ public class Robot extends TimedRobot {
       case kCustomAuto:
         // Put custom auto code here
         break;
-      case kDefaultAuto:
       default:
         // Put default auto code here
         break;
