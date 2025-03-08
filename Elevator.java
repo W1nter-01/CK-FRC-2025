@@ -58,18 +58,6 @@ public class ElevatorTarget () extends Command{
 
     @Override
     public boolean moveToHeight (int Target) {
-        switch {
-            case(0):
-                break;
-            case(1):
-                break;
-            case(2):
-                break;
-            case(3):
-                break;
-            case(4):    
-                break;
-        }
     }
 
     @Override
