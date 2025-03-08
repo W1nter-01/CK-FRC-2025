@@ -20,12 +20,19 @@ public class Elevator extends SubsystemBase{
         intakeMotor = new SparkMax(8, MotorType.kBrushless);
     }    
 
+    private void periodic() {
+    }
+
+    public void simulationPeriodic() {
+    }
+
     private void moveUp() {
     }
 
     private void moveDown () {
     }
 
+    @Override
     private void stop() {
     }
 
@@ -58,6 +65,7 @@ public class ElevatorTarget () extends Command{
         }
     }
 
+    @Override
     public void end(boolean interrupted) {
     }
 }
