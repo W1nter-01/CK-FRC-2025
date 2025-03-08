@@ -19,6 +19,18 @@ public class Elevator extends SubsystemBase{
         wristMotor = new SparkMax(7, MotorType.kBrushless);
         intakeMotor = new SparkMax(8, MotorType.kBrushless);
     }    
+
+    private void moveUp() {
+    }
+
+    private void moveDown () {
+    }
+
+    private void stop() {
+    }
+
+    private double getHeight() {
+    }
     
     public static Elevator getInstance() {
         if(instance == null) 
@@ -27,15 +39,25 @@ public class Elevator extends SubsystemBase{
     }
 }
 
-public class elevatorTarget () {
-    public boolean checkHeight (double Target) {
-        switch (
-            case():
+public class elevatorTarget () extends Command{
+    public elevatorTarget {
+    }
+
+    @Override
+    public boolean checkHeight (int Target) {
+        switch {
+            case(0):
                 
-            case():
-            case():
-            case():
-            case():        
+            case(1):
+            
+            case(2):
+                    
+            case(3):
+                    
+            case(4):        
         }
+    }
+
+    public void end(boolean interrupted) {
     }
 }
