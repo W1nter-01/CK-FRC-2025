@@ -17,6 +17,7 @@ public class OperatorInterface extends SubsystemBase {
 
     @Override
     public void periodic(){
+        //called by teleop
         Drivetrain Drive = Drivetrain.getInstance();
         double left = driverCTRL.getRawAxis(1);
         double right = driverCTRL.getRawAxis(5);
@@ -39,6 +40,7 @@ public class OperatorInterface extends SubsystemBase {
     }
 
     public static OperatorInterface getInstance(){
+        //1 copy for each controller
         if(instance == null) instance = new OperatorInterface();
         return instance;
     }
