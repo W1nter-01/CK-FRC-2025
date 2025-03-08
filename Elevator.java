@@ -39,7 +39,7 @@ public class Elevator extends SubsystemBase{
     }
 }
 
-public class elevatorTarget () extends Command{
+public class ElevatorTarget () extends Command{
     public elevatorTarget {
     }
 
