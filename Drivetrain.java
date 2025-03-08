@@ -30,22 +30,11 @@ public class Drivetrain extends SubsystemBase{
     public void setMotor(double left, double right, double rightE, boolean pressJoyL, boolean pressJoyR){
 
         if(driveMode == "Evan"){
-            if (pressJoyL){
-                speed = 1;
-            }else{
-                speed = 0.5;
-            }
             leftMotor1.set((left - rightE)*speed);
             leftMotor2.set((left - rightE)*speed);
             rightMotor3.set((-left - rightE)*speed);
             rightMotor4.set((-left - rightE)*speed);
-
         }else{
-            if (pressJoyL || pressJoyR){
-                speed = 1;
-            }else{
-                speed = 0.5;
-            }
             leftMotor1.set((left)*speed);
             leftMotor2.set((left)*speed);
             rightMotor3.set((-right)*speed);
