@@ -33,6 +33,7 @@ public class Robot extends TimedRobot {
    * initialization code.
    */
   public Robot() {
+    //our constructor
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
@@ -41,6 +42,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotInit(){
+    //creating subsystems, only happens once
     operatorInterface = OperatorInterface.getInstance();
     drivetrain = Drivetrain.getInstance();
     elevator = Elevator.getInstance();
