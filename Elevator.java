@@ -26,3 +26,16 @@ public class Elevator extends SubsystemBase{
         return instance;
     }
 }
+
+public class elevatorTarget () {
+    public boolean checkHeight (double Target) {
+        switch (
+            case():
+                
+            case():
+            case():
+            case():
+            case():        
+        }
+    }
+}
