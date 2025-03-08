@@ -36,6 +36,7 @@ public class OperatorInterface extends SubsystemBase {
         boolean pressL1 = driverCTRL.getRawButton(4);
 
         Drive.setMotor(left, right, rightE, pressJoyL, pressJoyR);
+        //calling drivetrain class, to set drive motors
         (pressSquare, pressX, pressCircle, pressTriangle, pressR1, pressR2, pressOptions, pressShare, pressL1);
     }
 
