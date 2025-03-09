@@ -17,8 +17,8 @@ public class OperatorInterface extends SubsystemBase {
 
     @Override
     public void periodic(){
-        //called by teleop
         Drivetrain Drive = Drivetrain.getInstance();
+        Elevator elevator = Elevator.getInstance();
         double left = driverCTRL.getRawAxis(1);
         double right = driverCTRL.getRawAxis(5);
         double rightE = driverCTRL.getRawAxis(2);
@@ -34,14 +34,32 @@ public class OperatorInterface extends SubsystemBase {
         boolean pressOptions = driverCTRL.getRawButton(8);
         boolean pressShare = driverCTRL.getRawButton(9);
         boolean pressL1 = driverCTRL.getRawButton(4);
+        
+        //inputs for elevator heights
+        if(pressSquare){
+            elevator.setElevatorTargetFromInput(2);
+            elevator.setEnabledElevator(true);
+        }else if(pressX){
+            elevator.setElevatorTargetFromInput(5);
+            elevator.setEnabledElevator(true);
+        }
+
+        //inputs for manual moving elevator
+        if(pressOptions){
+            elevator.setEnabledElevator(false);
+            elevator.setElevatorMotor(2);
+        } else if(pressShare) {
+            elevator.setEnabledElevator(false);
+            elevator.setElevatorMotor(-2);
+        }else if(!elevator.getEnabledElevator()){
+            elevator.setElevatorMotor(0);
+        }
 
         Drive.setMotor(left, right, rightE, pressJoyL, pressJoyR);
-        //calling drivetrain class, to set drive motors
-        (pressSquare, pressX, pressCircle, pressTriangle, pressR1, pressR2, pressOptions, pressShare, pressL1);
+        //(pressSquare, pressX, pressCircle, pressTriangle, pressR1, pressR2, pressOptions, pressShare, pressL1);
     }
 
     public static OperatorInterface getInstance(){
-        //1 copy for each controller
         if(instance == null) instance = new OperatorInterface();
         return instance;
     }
