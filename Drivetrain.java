@@ -27,30 +27,30 @@ public class Drivetrain extends SubsystemBase{
 
 
 
-    public void setMotor(double left, double right, double rightE, boolean pressJoyL, boolean pressJoyR){
+    public void setMotor(double leftJoyY, double rightJoyY, double rightJoyX, boolean BTN_joyL, boolean BTN_joyR){
 
         if(driveMode == "Evan"){
-            if (pressJoyL){
+            if (BTN_joyL){
                 speed = 1;
             }else{
                 speed = 0.5;
             }
-            leftMotor1.set((left - rightE)*speed);
-            leftMotor2.set((left - rightE)*speed);
-            rightMotor3.set((-left - rightE)*speed);
-            rightMotor4.set((-left - rightE)*speed);
+            leftMotor1.set((leftJoyY - rightJoyX)*speed);
+            leftMotor2.set((leftJoyY - rightJoyX)*speed);
+            rightMotor3.set((-leftJoyY - rightJoyX)*speed);
+            rightMotor4.set((-leftJoyY - rightJoyX)*speed);
 
         }else{
-            if (pressJoyL || pressJoyR){
+            if (BTN_joyL || BTN_joyR){
                 speed = 1;
             }else{
                 speed = 0.5;
             }
-            leftMotor1.set((left)*speed);
-            leftMotor2.set((left)*speed);
-            rightMotor3.set((-right)*speed);
-            rightMotor4.set((-right)*speed);
-            //*Math.abs(left)
+            leftMotor1.set((leftJoyY)*speed);
+            leftMotor2.set((leftJoyY)*speed);
+            rightMotor3.set((-rightJoyY)*speed);
+            rightMotor4.set((-rightJoyY)*speed);
+            //*Math.abs(leftJoyY)
             //*Math.abs(right)
         }
 
